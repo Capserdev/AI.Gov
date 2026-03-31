@@ -13,7 +13,6 @@ def render_navbar():
     cols = st.columns(len(TABS))
     for i, (key, label) in enumerate(TABS):
         with cols[i]:
-            if st.button(label, key=f"nav_{key}", use_container_width=True,
-                         type="primary" if key == active else "secondary"):
+            if st.button(label, key=f"nav_{key}"):
                 navigate_to(key)
                 st.rerun()

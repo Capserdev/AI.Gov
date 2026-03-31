@@ -5,15 +5,13 @@ from utils.constants import HANDWRITING_MODEL_DIR, VOICE_MODEL_DIR, HANDWRITING_
 
 def render():
     st.markdown("""<div class="nt-hero"><div class="nt-hero-badge">NC HOSA 2026 &middot; MEDICAL INNOVATIONS</div><h1>Parkinson's screening<br>through <span>digital biomarkers</span></h1><p>NeuroTrace combines handwriting analysis, vocal biomarkers, and lifestyle assessment into a unified, non-invasive screening tool powered by deep learning.</p></div>""", unsafe_allow_html=True)
-    c1,c2,c3 = st.columns([1,2,1])
-    with c2:
-        b1,b2 = st.columns(2)
-        with b1:
-            if st.button("Start Screening", key="hero_start", type="primary", use_container_width=True):
-                navigate_to("handwriting"); st.rerun()
-        with b2:
-            if st.button("Learn More", key="hero_learn", type="secondary", use_container_width=True):
-                navigate_to("science"); st.rerun()
+    b1, b2, _ = st.columns([1, 1, 2])
+    with b1:
+        if st.button("Start Screening", key="hero_start"):
+            navigate_to("handwriting"); st.rerun()
+    with b2:
+        if st.button("Learn More", key="hero_learn"):
+            navigate_to("science"); st.rerun()
     st.markdown("<br>", unsafe_allow_html=True)
     c1,c2,c3,c4 = st.columns(4)
     with c1: stat_card("10M+","People affected globally","fade-up-1")
