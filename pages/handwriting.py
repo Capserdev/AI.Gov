@@ -23,7 +23,7 @@ def render():
             st.markdown(f'<div class="nt-card-static" style="border-left:3px solid {color};"><div style="font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:{color};margin-bottom:0.35rem;">{title.upper()}</div><div style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:0.75rem;">{desc}</div></div>', unsafe_allow_html=True)
             up = st.file_uploader(f"Upload {title}", type=["png","jpg","jpeg","bmp","tiff"], key=f"hw_{key}", label_visibility="collapsed")
             if up:
-                img = Image.open(up); st.image(img, use_column_width=True)
+                img = Image.open(up); st.image(img, use_container_width=True)
                 score = demo_handwriting_predict(key, up.name) if demo else (predict_single(models[key], img) if key in models else demo_handwriting_predict(key, up.name))
                 results[key] = score; st.session_state["handwriting_results"] = results
                 c = get_risk_color(score)

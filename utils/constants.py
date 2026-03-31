@@ -22,9 +22,9 @@ TTA_PASSES = 4
 TABS = [
     ("overview", "OVERVIEW"),
     ("handwriting", "HANDWRITING"),
-    ("voice", "VOICE ANALYSIS"),
-    ("survey", "LIFESTYLE SURVEY"),
-    ("report", "MY REPORT"),
+    ("voice", "VOICE"),
+    ("survey", "SURVEY"),
+    ("report", "REPORT"),
     ("science", "SCIENCE"),
-    ("platform", "PLATFORM"),
+    ("platform", "STACK"),
 ]

@@ -1,21 +1,58 @@
 import streamlit as st
 
-def stat_card(value, label, delay="fade-up"):
-    st.markdown(f'<div class="nt-stat {delay}"><div class="stat-value">{value}</div><div class="stat-label">{label}</div></div>', unsafe_allow_html=True)
+def stat_card(value, label, delay=""):
+    st.markdown(
+        f'<div class="nt-stat">'
+        f'<div class="stat-value">{value}</div>'
+        f'<div class="stat-label">{label}</div>'
+        f'</div>',
+        unsafe_allow_html=True
+    )
 
-def info_card(title, body, color="var(--accent)"):
-    st.markdown(f'<div class="nt-card"><div style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:{color};margin-bottom:0.5rem;">{title}</div><div style="font-size:0.9rem;color:var(--text-secondary);line-height:1.6;">{body}</div></div>', unsafe_allow_html=True)
+def info_card(title, body, color="var(--text)"):
+    st.markdown(
+        f'<div class="nt-card">'
+        f'<div style="font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.6rem;">{title}</div>'
+        f'<div style="font-size:0.85rem;color:var(--text-muted);line-height:1.65;">{body}</div>'
+        f'</div>',
+        unsafe_allow_html=True
+    )
 
 def model_card(name, mtype, desc, is_live):
-    sc = "live" if is_live else "demo"
-    st_text = "LIVE" if is_live else "DEMO"
-    dot = "var(--green)" if is_live else "var(--amber)"
-    st.markdown(f'<div class="nt-card" style="height:100%;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;"><span style="font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);">{mtype}</span><span class="nt-status-pill {sc}"><span class="pulse-dot" style="background:{dot};"></span>{st_text}</span></div><div style="font-family:var(--font-display);font-size:1.15rem;color:var(--text);margin-bottom:0.5rem;">{name}</div><div style="font-size:0.82rem;color:var(--text-secondary);line-height:1.55;">{desc}</div></div>', unsafe_allow_html=True)
+    status = "LIVE" if is_live else "DEMO"
+    pill_cls = "live" if is_live else "demo"
+    dot_color = "var(--green)" if is_live else "var(--amber)"
+    st.markdown(
+        f'<div class="nt-card">'
+        f'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">'
+        f'<span style="font-family:var(--font-mono);font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);">{mtype}</span>'
+        f'<span class="nt-status-pill {pill_cls}"><span class="pulse-dot" style="background:{dot_color};"></span>{status}</span>'
+        f'</div>'
+        f'<div style="font-family:var(--font-serif);font-size:1rem;color:var(--text);margin-bottom:0.5rem;">{name}</div>'
+        f'<div style="font-size:0.8rem;color:var(--text-muted);line-height:1.6;">{desc}</div>'
+        f'</div>',
+        unsafe_allow_html=True
+    )
 
-def section_header(title, subtitle=""):
-    st.markdown(f'<div class="nt-section-title">{title}</div>', unsafe_allow_html=True)
+def section_header(title, subtitle="", num=""):
+    label = f'<div class="nt-section-label"><span class="nt-section-num">{num}</span><span class="nt-section-name">{title}</span></div>' if num else \
+            f'<div class="nt-section-label"><span class="nt-section-name">{title}</span></div>'
+    st.markdown(label, unsafe_allow_html=True)
     if subtitle:
-        st.markdown(f'<div class="nt-section-subtitle">{subtitle}</div>', unsafe_allow_html=True)
+        st.markdown(
+            f'<div style="font-family:var(--font-serif);font-size:1.6rem;font-weight:400;color:var(--text);letter-spacing:-0.02em;margin-bottom:1rem;">{subtitle}</div>',
+            unsafe_allow_html=True
+        )
 
 def divider():
     st.markdown('<hr class="nt-divider">', unsafe_allow_html=True)
+
+def page_footer():
+    st.markdown(
+        '<div style="margin-top:3rem;padding:1.5rem 0 1rem;border-top:1px solid var(--border);'
+        'text-align:center;font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.12em;'
+        'text-transform:uppercase;color:var(--text-dim);">'
+        'Conceptualized and developed in the United States&nbsp;🇺🇸'
+        '</div>',
+        unsafe_allow_html=True
+    )
