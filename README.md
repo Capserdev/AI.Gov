@@ -3,6 +3,9 @@
 > Presented at the **AI Presidential Challenge 2026**
 > Built by Luis Cruz
 
+[![Read Our Paper](https://img.shields.io/badge/Read%20Our%20Paper-Overleaf-brightgreen?style=for-the-badge&logo=overleaf)](https://www.overleaf.com/read/tknxcgwgrdzm#3ab6db)
+[![See Our Website Code](https://img.shields.io/badge/See%20Our%20Website%20Code-GitHub-blue?style=for-the-badge&logo=github)](https://github.com/Capserdev/AI.Gov)
+
 NeuroTrace is a multimodal machine learning platform for non-invasive Parkinson's disease screening. It combines handwriting analysis, vocal biomarkers, and lifestyle assessment into a unified web application powered by deep learning and support vector machines.
 
 ---
