@@ -279,6 +279,30 @@ def inject_theme():
     }
     .nt-nav-link:hover { color: var(--text); }
     .nt-nav-link.active { color: var(--text); }
+    .nt-nav-buttons {
+        display: flex;
+        gap: 0.6rem;
+        align-items: center;
+        flex-shrink: 0;
+    }
+    .nt-nav-btn {
+        font-family: var(--font-mono);
+        font-size: 0.58rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text);
+        text-decoration: none;
+        border: 1px solid var(--border-dark, #c0bbb3);
+        border-radius: var(--radius-pill);
+        padding: 0.3rem 0.85rem;
+        white-space: nowrap;
+        transition: all 0.15s;
+    }
+    .nt-nav-btn:hover {
+        background: var(--text);
+        color: var(--bg);
+        border-color: var(--text);
+    }
 
     /* ── Streamlit widget overrides (non-navbar buttons) ── */
     .stButton > button {
