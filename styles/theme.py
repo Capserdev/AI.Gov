@@ -244,8 +244,8 @@ def inject_theme():
     /* ── Navbar ── */
     .nt-navbar {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: stretch;
         padding: 1rem 0;
         border-bottom: 1px solid var(--border);
         margin-bottom: 0;
@@ -279,29 +279,36 @@ def inject_theme():
     }
     .nt-nav-link:hover { color: var(--text); }
     .nt-nav-link.active { color: var(--text); }
+    .nt-navbar-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 0.75rem;
+    }
     .nt-nav-buttons {
         display: flex;
         gap: 0.6rem;
         align-items: center;
-        flex-shrink: 0;
     }
     .nt-nav-btn {
-        font-family: var(--font-mono);
-        font-size: 0.58rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--text);
-        text-decoration: none;
-        border: 1px solid var(--border-dark, #c0bbb3);
-        border-radius: var(--radius-pill);
-        padding: 0.3rem 0.85rem;
-        white-space: nowrap;
-        transition: all 0.15s;
+        font-family: var(--font-mono) !important;
+        font-size: 0.58rem !important;
+        letter-spacing: 0.1em !important;
+        text-transform: uppercase !important;
+        color: var(--text) !important;
+        text-decoration: none !important;
+        border: 1px solid #c0bbb3 !important;
+        border-radius: 100px !important;
+        padding: 0.3rem 0.85rem !important;
+        white-space: nowrap !important;
+        transition: all 0.15s !important;
+        display: inline-block !important;
     }
     .nt-nav-btn:hover {
-        background: var(--text);
-        color: var(--bg);
-        border-color: var(--text);
+        background: var(--text) !important;
+        color: var(--bg) !important;
+        border-color: var(--text) !important;
     }
 
     /* ── Streamlit widget overrides (non-navbar buttons) ── */

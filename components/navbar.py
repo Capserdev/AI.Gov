@@ -25,18 +25,16 @@ def render_navbar():
         for key, label in TABS
     )
 
-    buttons_html = (
-        '<div class="nt-nav-buttons">'
-        '<a class="nt-nav-btn" href="https://www.overleaf.com/read/tknxcgwgrdzm#3ab6db" target="_blank">Read Our Paper</a>'
-        '<a class="nt-nav-btn" href="https://github.com/Capserdev/AI.Gov" target="_blank">See Our Website Code</a>'
-        '</div>'
-    )
-
     st.markdown(
         f'<div class="nt-navbar">'
-        f'<div class="nt-logo">NeuroTrace{aigov_html}</div>'
-        f'<nav class="nt-nav-links">{links_html}</nav>'
-        f'{buttons_html}'
+        f'  <div class="nt-navbar-top">'
+        f'    <div class="nt-logo">NeuroTrace{aigov_html}</div>'
+        f'    <div class="nt-nav-buttons">'
+        f'      <a class="nt-nav-btn" href="https://www.overleaf.com/read/tknxcgwgrdzm#3ab6db" target="_blank">Read Our Paper</a>'
+        f'      <a class="nt-nav-btn" href="https://github.com/Capserdev/AI.Gov" target="_blank">See Our Website Code</a>'
+        f'    </div>'
+        f'  </div>'
+        f'  <nav class="nt-nav-links">{links_html}</nav>'
         f'</div>',
         unsafe_allow_html=True
     )
