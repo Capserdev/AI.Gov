@@ -1,7 +1,7 @@
 # NeuroTrace — AI-Powered Parkinson's Screening Platform
 
 > Presented at the **AI Presidential Challenge 2026**
-> Built by Luis Cruz
+> Built by Luis Cruz-Mondragon, Jerrin Moore and Andrew Shih
 
 [![Read Our Paper](https://img.shields.io/badge/Read%20Our%20Paper-Overleaf-brightgreen?style=for-the-badge&logo=overleaf)](https://www.overleaf.com/read/tknxcgwgrdzm#3ab6db)
 [![See Our Website Code](https://img.shields.io/badge/See%20Our%20Website%20Code-GitHub-blue?style=for-the-badge&logo=github)](https://github.com/Capserdev/AI.Gov)
